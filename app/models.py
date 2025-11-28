@@ -33,5 +33,7 @@ class APIResponse(BaseModel):
 
 class ExtractRequest(BaseModel):
     document: str
-    # This is the new field where we will send the data back
-    webhook_url: str
+    # --- Request Structure ---
+
+class ExtractRequest(BaseModel):
+    document: str
