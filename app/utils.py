@@ -18,7 +18,7 @@ def process_document(file_content: bytes, url: str) -> list[str]:
     # Check if PDF based on extension or header
     if url.lower().endswith('.pdf') or file_content.startswith(b'%PDF'):
         # Convert PDF to images (300 DPI for better OCR)
-        images = convert_from_bytes(file_content, dpi=300, fmt='jpeg')
+        images = convert_from_bytes(file_content, dpi=100, fmt='jpeg')
         for img in images:
             buffered = BytesIO()
             img.save(buffered, format="JPEG")
