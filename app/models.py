@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional, Literal
+from typing import List, Literal, Optional
 
-# --- Response Structures ---
+# --- Response Structures (Same as before) ---
 
 class BillItem(BaseModel):
     item_name: str = Field(..., description="Exactly as mentioned in the bill")
@@ -29,7 +29,9 @@ class APIResponse(BaseModel):
     token_usage: TokenUsage
     data: ExtractionData
 
-# --- Request Structure ---
+# --- Request Structure (UPDATED) ---
 
 class ExtractRequest(BaseModel):
     document: str
+    # This is the new field where we will send the data back
+    webhook_url: str
